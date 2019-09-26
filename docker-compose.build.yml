@@ -1,0 +1,13 @@
+# docker-compose -f .\docker-compose.build.yml build
+version: '3.5'
+services:
+  tjmt-nginx:
+    image: tjmt/nginx:${NGINX_VERSION}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NGINX_VERSION: ${NGINX_VERSION}
+        TimeZone: ${TIMEZONE}
+        Language: ${LANGUAGE}
+        Unicode: ${UNICODE}        
