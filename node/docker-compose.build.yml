@@ -1,7 +1,7 @@
 version: '3.5'
 services:
-  dsa-node:
-    image: tjmt/node:${NODE_VERSION}
+  tjmt-node:
+    image: tjmt/angular:node-${NODE_VERSION}
     build:
       context: .
       dockerfile: Dockerfile

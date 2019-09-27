@@ -2,7 +2,7 @@
 version: '3.5'
 services:
   tjmt-nginx:
-    image: tjmt/nginx:${NGINX_VERSION}
+    image: tjmt/angular:nginx-${NGINX_VERSION}
     build:
       context: .
       dockerfile: Dockerfile
