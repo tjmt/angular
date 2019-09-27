@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  dsa-node:
+    image: tjmt/node:${NODE_VERSION}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_VERSION: ${NODE_VERSION}
+        SONAR_SCANNER_NPM_VERSION: ${SONAR_SCANNER_NPM_VERSION}
+        SONAR_SCANNER_CLI_VERSION: ${SONAR_SCANNER_CLI_VERSION}
