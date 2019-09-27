@@ -18,3 +18,6 @@ COPY default.conf /etc/nginx/conf.d/
 
 COPY /entrypoint/ /entrypoint/
 RUN chmod +x /entrypoint/entrypoint.sh
+
+EXPOSE 80 443
+ENTRYPOINT ["/entrypoint/entrypoint.sh"]

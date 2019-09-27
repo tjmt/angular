@@ -36,4 +36,5 @@ RUN apt-get update && \
 #-----------------
 
 COPY /entrypoint/ /entrypoint/
-RUN chmod +x /entrypoint/entrypoint-ci.sh             
+RUN chmod +x /entrypoint/entrypoint-ci.sh
+ENTRYPOINT ["/entrypoint/entrypoint-ci.sh"]
