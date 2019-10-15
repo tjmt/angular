@@ -29,10 +29,5 @@ WORKDIR /app
 RUN npm run build -- --aot=true --build-optimizer=true --optimization=true --prod --configuration=production --base-href=/ --output-path=www
 RUN npm pack
 RUN mkdir -p /app/package && mv *.tgz /app/package
-
-FROM tjmt/nginx:1.17.4 AS runtime
-COPY --from=publish /app/www/ /usr/share/nginx/html/
-EXPOSE 80 443
-ENTRYPOINT ["/entrypoint/entrypoint.sh"]
 ```
 
