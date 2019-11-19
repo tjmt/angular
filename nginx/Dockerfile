@@ -1,9 +1,9 @@
 ARG NGINX_VERSION
 FROM nginx:${NGINX_VERSION:-1.17.4}
 
-ARG TimeZone
-ARG Language
-ARG Unicode
+ARG TimeZone=America/Cuiaba
+ARG Language=pt_BR
+ARG Unicode=UTF-8
 
 RUN ln -snf /usr/share/zoneinfo/$TimeZone /etc/localtime && echo $TimeZone > /etc/timezone
 RUN apt-get update && \
