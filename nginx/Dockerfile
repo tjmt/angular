@@ -1,5 +1,5 @@
 ARG NGINX_VERSION
-FROM nginx:${NGINX_VERSION}
+FROM nginx:${NGINX_VERSION:-1.17.4}
 
 ARG TimeZone
 ARG Language
