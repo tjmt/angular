@@ -7,9 +7,9 @@ ARG Unicode=UTF-8
 
 RUN ln -snf /usr/share/zoneinfo/$TimeZone /etc/localtime && echo $TimeZone > /etc/timezone
 RUN apt-get update && \
-    apt-get install -y locales locales-all && \
+    apt-get install -y locales locales-all curl --no-install-recommends && \
     locale-gen ${Language}.${Unicode} && \
-    update-locale LANG=${Language}.${Unicode}
+    update-locale LANG=${Language}.${Unicode} 
 
 ENV LANG ${Language}.${Unicode}
 ENV LANGUAGE ${Language}
